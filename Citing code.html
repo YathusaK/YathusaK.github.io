@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Citing Code</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="p5.min.js"></script>
+    <style>
+
+      div {
+      width: 100px;
+      height: 100px;
+      background-color: crimson;
+      position: relative;
+      box-shadow: 20px 20px 0px pink;
+      transition: width 2s, height 2s, transform 1s;
+      animation-name: example;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+      animation-delay: 3s;
+    }
+    div:hover {
+      width: 300px;
+      height: 300px;
+      transform: rotate(180deg);
+    }
+
+    @keyframes example {
+      0%   {background-color:crimson; left:0px; top:0px;}
+      0%	{box-shadow:20px 20px 0px pink;}
+      25%  {background-color:yellow; left:400px; top:0px;}
+      25%	{box-shadow:-20px 20px 30px orange;}
+      50%  {background-color:navy; left:400px; top:400px;}
+      50%	{box-shadow:-20px -20px 0px cyan;}
+      75%  {background-color:rgb(11, 68, 11); left:0px; top:400px;}
+      75%	{box-shadow:20px -20px 30px lightgreen;}
+      100% {background-color:crimson; left:0px; top:0px;}
+      100%	{box-shadow:20px 20px 0px pink;}
+    }
+    </style>
+</head>
+<!--
+The CSS animation was borrowed from https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_count
+lines 17-18 and 24-28 was experimentation on my end to see if animation within
+ animation can co-exist seemlessly.
+ The end result has it running smoothly but there is some weird glitch happening
+ when it exists within the collapsible but it still runs how I expected it to 
+ when I combined them
+-->
+
+    <body>
+      <h1>Yathusa's Code Page</h1>
+     <ul>
+        <li><a href="Homepage.html">Home</a></li>
+        <li><a href="Assignments.html">Assignments</a></li>
+        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Surprize</a></li>
+      </ul>
+    <h1>Citing Code</h1>
+    <p>A Collapsible: Hover over object when opened</p>
+    <button type="button" class="collapsible1">Open Collapsible</button>
+    <div class="content2">
+      
+      <div></div>    
+    </div>
+
+    
+<!-- Borrowed from a collapsible tutorial: https://www.w3schools.com/howto/howto_js_collapsible.asp  -->
+    <script>
+      var coll = document.getElementsByClassName("collapsible1");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+    </script>
+    </body>
+</html>

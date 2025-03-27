@@ -73,3 +73,27 @@ body {
     text-align: center;
     color: #fff;
   }
+/*Bellow are taken from https://www.w3schools.com/howto/howto_js_collapsible.asp 
+classes have been more defined to not cross over
+*/
+  .collapsible1 {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  .active, .collapsible1:hover {
+    background-color: #555;
+  }
+  .content2 {
+    padding: 0 0px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+
