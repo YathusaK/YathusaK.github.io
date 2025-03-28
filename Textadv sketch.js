@@ -4,7 +4,8 @@ var colourPicker;
 var bgColourPicker
 let textInput;
 let userText = ""; // Stores user-inputted text
-
+let bubbleColorSlider;
+let bubbleColor = 255; // Default bubble color (white)
 
 
 function setup() {
@@ -17,6 +18,11 @@ function setup() {
     bgColorButton.mousePressed(repaint);
     bgColourPicker.changed( repaint ); 
     background( bgColourPicker.value() );
+
+    // Bubble color slider
+  bubbleColorSlider = createSlider(0, 255, 255); // Range: 0 (black) to 255 (white)
+  //bubbleColorSlider.position(10, 60); // Position below color picker
+  bubbleColorSlider.style('width', '200px'); // Adjust width
 
     // Text input field
     textInput = createInput("");
@@ -47,6 +53,7 @@ function mouseDragged() {
 function draw() {
   // Continuously update background
   background(bgColourPicker.value());
+  bubbleColor = bubbleColorSlider.value();
 
   // Move the unicorn and show it
   unicorn.x = mouseX
@@ -68,10 +75,11 @@ function draw() {
       if (unicorn.intersects(b)) {
         b.changeColor(255);
       } else {
-        b.changeColor(0);
+        b.changeColor(bubbleColor);
       }
     }
   }
+
   // Display user text in the center https://p5js.org/examples/imported-media-words/
   fill(255);
   textSize(50);
