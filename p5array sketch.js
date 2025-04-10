@@ -74,3 +74,8 @@ function mousePressed() {
   flash = true;                // Trigger lightning flash
   flashTimer = millis();
 }
+//https://p5js.org/tutorials/organizing-code-with-functions/ 
+// On how to setup onclick functions 
+
+// https://editor.p5js.org/kelsierose94/sketches/MU2Y21aG0 
+// this helped me set up the rain effect 
